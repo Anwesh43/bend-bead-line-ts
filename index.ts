@@ -59,13 +59,13 @@ class DrawingUtil {
                 DrawingUtil.drawLine(context, 0, 0, 0, -size * 0.5 * sf1)
             }
             context.save()
-            context.translate(0, -size)
+            context.translate(0, -size / 2)
             context.rotate(deg * sf4)
             if (sf2 > 0) {
                 DrawingUtil.drawLine(context, 0, 0, 0, -size * 0.5 * sf2)
             }
             if (sf3 > 0) {
-                DrawingUtil.drawCircle(context, 0, -size, (size / 10) * sf3)
+                DrawingUtil.drawCircle(context, 0, -size / 2, (size / 10) * sf3)
             }
             context.restore()
             context.restore()
@@ -77,6 +77,7 @@ class DrawingUtil {
         context.lineCap = 'round'
         context.strokeStyle = colors[i]
         context.lineWidth = Math.min(w, h) / strokeFactor 
+        context.fillStyle = colors[i]
         DrawingUtil.drawBendBeadLine(context, scale)
     }
 }
